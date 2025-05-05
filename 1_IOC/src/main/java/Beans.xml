@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="cash" class="com.yash.Beans.Cash"></bean>
+    <bean id="DebitCard" class="com.yash.Beans.DebitCard"></bean>
+    <bean id="CreditCard" class="com.yash.Beans.CreditCard"></bean>
+    
+    <bean id="Shopping" class="com.yash.Beans.Shopping">
+    <property name="p" ref="DebitCard"></property>
+    <constructor-arg name="p" ref="cash"></constructor-arg>
+    </bean>  
+
+</beans>
